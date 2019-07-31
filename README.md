@@ -22,11 +22,11 @@ How to use it ?
 I have not done any interface to take argument in command line so this module can't be used as a script. (feel free to modify it).
 To use it from python shell or in another module do:
 
-    from pydes import des
+    from pydes import DES
 
     key = "secret_k"
     text= "Hello wo"
-    d = des(key)
+    d = DES(key)
     ciphered = d.encrypt(text)
     plain = d.decrypt(ciphered)
     print "Ciphered: %r" % ciphered
@@ -36,11 +36,11 @@ Note: In this exemple no padding is specified so you have to provide a text whic
 
 To use padding:
 
-    from pydes import des
+    from pydes import DES
 
     key = "secret_k"
     text= "Hello world !"
-    d = des(key,padding=True)
+    d = DES(key, padding=True)
     ciphered = d.encrypt(text) #Or just True in third arg
     plain = d.decrypt(ciphered)
     print "Ciphered: %r" % ciphered
