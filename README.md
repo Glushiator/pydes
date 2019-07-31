@@ -26,9 +26,9 @@ To use it from python shell or in another module do:
 
     key = "secret_k"
     text= "Hello wo"
-    d = des()
-    ciphered = d.encrypt(key,text)
-    plain = d.decrypt(key,ciphered)
+    d = des(key)
+    ciphered = d.encrypt(text)
+    plain = d.decrypt(ciphered)
     print "Ciphered: %r" % ciphered
     print "Deciphered: ", plain
 
@@ -40,8 +40,8 @@ To use padding:
 
     key = "secret_k"
     text= "Hello world !"
-    d = des()
-    ciphered = d.encrypt(key,text,padding=True) #Or just True in third arg
-    plain = d.decrypt(key,ciphered,padding=True)
+    d = des(key,padding=True)
+    ciphered = d.encrypt(text) #Or just True in third arg
+    plain = d.decrypt(ciphered)
     print "Ciphered: %r" % ciphered
     print "Deciphered: ", plain
