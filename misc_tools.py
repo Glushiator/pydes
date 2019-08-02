@@ -68,13 +68,7 @@ def memoize(func):
 def memoize_range(size):
     """Memoization decorator for functions with one argument that is
     a number in range [0, size-1]"""
-    cache = [None] * size
-
     def decorator(func):
-        def wrapper(val):
-            result = cache[val]
-            if result is None:
-                result = cache[val] = func(val)
-            return result
-        return wrapper
+        _pre_calculated = tuple(func(n) for n in range(size))
+        return _pre_calculated.__getitem__
     return decorator

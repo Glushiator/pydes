@@ -5,7 +5,7 @@ from __future__ import print_function
 from misc_tools import TimeIt, recursive_map, flatten, memoize, memoize_range
 
 
-@memoize
+@memoize_range(16)
 def int2_4bits(val):
     """return the binary value as a tuple of 4 bits"""
     binval = bin(val)[2:]
